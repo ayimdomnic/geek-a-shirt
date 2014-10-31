@@ -15,8 +15,7 @@ var config = require("./config/database");
 // import models to be used
 var index = require('./routes/index');
 var users = require('./routes/users');
-var events = require('./routes/events');
-var posts = require('./routes/tasks');
+var shirts = require('./routes/shirts');
 var UserModel = require('./models/users');
 var authentication = require('./routes/authentication');
 
@@ -47,7 +46,7 @@ app.set('trust proxy', 'loopback');
 
 
 // setup the logger and only log errors
-var accessLogStream = fs.createWriteStream(__dirname + 'InkOverFlow.log', 
+var accessLogStream = fs.createWriteStream(__dirname + 'geek-a-shirt.log',
 	{ flags: 'a' });
 app.use(logger('combined', { stream: accessLogStream,
     skip: function (req, res) { return res.statusCode < 400 } }));
@@ -87,13 +86,6 @@ app.get('/auth/facebook/callback', passportSession.passport.authenticate('facebo
     successReturnToOrRedirect: '/', failureRedirect: '/login' })
 );
 
-app.post('/login', passport.authenticate('local',
-  { failureRedirect: '/login',
-    failureFlash: true,
-    successRedirect: '/' }), function(req, res) {
-      res.redirect('/');
-});
-
 
 app.get('/logout',
   function(req, res) {
@@ -115,10 +107,8 @@ app.get('/logout',
 
 // static pages routes
 app.get('/', index.index);
-app.get('/app', index.app);
 app.get('/login', index.login);
 app.get('/api', index.checkApi);
-
 
 
 //app.post('/api/user/elasticSearchUsers/', ESusers.elasticSearchUsers);

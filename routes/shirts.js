@@ -10,11 +10,13 @@ exports.addShirt= function(req, res) {
 	}
 
 	var new_shirt = new Shirt({
-		id: req.body.id,
 	    title: req.body.title,
 	    _slug: slug((req.body.title).toLowerCase()),
-	    content: req.body.content,
-	    author_id: req.body.idAuthor
+	    designer: req.body.designer,
+	    code_lang: req.body.code_lang,
+	    image_url: req.body.image_url,
+	    price: req.body.price,
+	    no_available: req.body.no_available
 	});
 
 	new_shirt.save(function(error, result) {
@@ -96,12 +98,14 @@ exports.deleteShirtById = function(req, res) {
 
 exports.updateShirtById = function(req, res) {
 
-	var _shirt = new Shirt({
-		id: req.body.id,
+	var new_shirt = new Shirt({
 	    title: req.body.title,
 	    _slug: slug((req.body.title).toLowerCase()),
-	    content: req.body.content,
-	    idAuthor: req.body.idAuthor
+	    designer: req.body.designer,
+	    code_lang: req.body.code_lang,
+	    image_url: req.body.image_url,
+	    price: req.body.price,
+	    no_available: req.body.no_available
 	});
 
 	Shirt.get( req.params.id ).update(_shirt).run(function(error, result) {

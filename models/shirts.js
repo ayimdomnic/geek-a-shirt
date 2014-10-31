@@ -4,8 +4,11 @@ var thinky = require('thinky')(config.rethinkdb);
 var r = thinky.r;
 
 var Shirt = thinky.createModel('Shirts', {
-    shirt_id: String,
+    id: String,
     designer: String,
+    code_lang: String,
+    title: String,
+    _slug: String,
     image_url: String,
     price: String,
     no_available: String,
