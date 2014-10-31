@@ -3,7 +3,7 @@ var express = require('express');
 
 exports.index = function(req, res) {
 	if (req.isAuthenticated()) {
-	  res.render('app', { title: 'geekAshirt', user: req.user[0] });
+	  res.render('app', { title: 'geekAshirt', user: req.user });
 	  console.log(req.user);
 	} else {
 	  res.render('index', { title: 'geekAshirt' });
