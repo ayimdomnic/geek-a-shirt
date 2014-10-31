@@ -1,0 +1,39 @@
+{
+  "name": "TaskWetu",
+  "description": "Getting errands done!",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.x",
+    "express-session": "*",
+    "hiredis": "*",
+    "redis": "*",
+    "connect-redis": "2.1.0",
+    "rethinkdb": "1.15.0-0",
+    "kue": "*",
+    "forever": "*",
+    "forever-monitor": "*",
+    "sendgrid": "1.1.1",
+    "should": "*",
+    "supertest": "*",
+    "winston": "*",
+    "morgan": "*",
+    "validator": "*",
+    "serve-favicon": "*",
+    "cookie-parser": "*",
+    "body-parser": "*",
+    "lodash": "*",
+    "slug": "*",
+    "handlebars": "*",
+    "express-handlebars": "*",
+    "bcrypt-nodejs": "*",
+    "passport": "^0.2.0",
+    "passport-google-oauth": "0.1.5",
+    "passport-twitter": "^1.0.2",
+    "passport-facebook": "^1.0.3",
+    "passport-local": "1.0.0",
+    "scripts": {
+        "test": "make test"
+    }
+  }
+}
