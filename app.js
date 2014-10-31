@@ -46,7 +46,7 @@ app.set('trust proxy', 'loopback');
 
 
 // setup the logger and only log errors
-var accessLogStream = fs.createWriteStream(__dirname + 'geek-a-shirt.log',
+var accessLogStream = fs.createWriteStream('geek-a-shirt.log',
 	{ flags: 'a' });
 app.use(logger('combined', { stream: accessLogStream,
     skip: function (req, res) { return res.statusCode < 400 } }));
