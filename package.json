@@ -1,6 +1,6 @@
 {
-  "name": "TaskWetu",
-  "description": "Getting errands done!",
+  "name": "geek-A-shirt",
+  "description": "geek your shirt; Print some code :D",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
@@ -9,8 +9,8 @@
     "hiredis": "*",
     "redis": "*",
     "connect-redis": "2.1.0",
+    "thinky": "1.14.4",
     "rethinkdb": "1.15.0-0",
-    "kue": "*",
     "forever": "*",
     "forever-monitor": "*",
     "sendgrid": "1.1.1",
@@ -22,7 +22,6 @@
     "serve-favicon": "*",
     "cookie-parser": "*",
     "body-parser": "*",
-    "lodash": "*",
     "slug": "*",
     "handlebars": "*",
     "express-handlebars": "*",
@@ -31,7 +30,6 @@
     "passport-google-oauth": "0.1.5",
     "passport-twitter": "^1.0.2",
     "passport-facebook": "^1.0.3",
-    "passport-local": "1.0.0",
     "scripts": {
         "test": "make test"
     }
