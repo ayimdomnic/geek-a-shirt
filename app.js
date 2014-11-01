@@ -16,8 +16,12 @@ var config = require("./config/database");
 var index = require('./routes/index');
 var users = require('./routes/users');
 var shirts = require('./routes/shirts');
+var payment = require('./routes/payments');
 var UserModel = require('./models/users');
 var authentication = require('./routes/authentication');
+
+var PesaPal = require('pesapaljs');
+var config = require('./config/payments');
 
 var app = express();
 
@@ -109,6 +113,9 @@ app.get('/logout',
 app.get('/', index.index);
 app.get('/login', index.login);
 app.get('/api', index.checkApi);
+
+app.get('/ipn', PesaPal.paymentListener, payment.ipn);
+app.get('/makeOrder', payment.makeOrder);
 
 
 //app.post('/api/user/elasticSearchUsers/', ESusers.elasticSearchUsers);
